@@ -1,0 +1,4 @@
+Dockerfile.python
+.dockerignore
+.git
+.gitignore
