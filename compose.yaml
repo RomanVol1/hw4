@@ -11,8 +11,8 @@ services:
     restart: on-failure
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=my-test
-      - MYSQL_USER=my-test
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_HOST="%"
 
@@ -28,8 +28,8 @@ services:
         ipv4_address: 172.20.0.5
     restart: always
     environment:
-      - DB_NAME=my-test
-      - DB_USER=my-test
+      - DB_NAME=test
+      - DB_USER=test
       - DB_PASSWORD=${MYSQL_PASSWORD}
       - DB_HOST=mysql 
      
@@ -54,8 +54,8 @@ volumes:
   
 networks:
   backend:
+    driver: bridge
     ipam:
-      driver: bridge
-      config:
-        - subnet: 172.20.0.0/24
+     config:
+       - subnet: 172.20.0.0/24
 
